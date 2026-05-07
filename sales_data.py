@@ -4,9 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-# ------------------------------
 # Step 1: Load Dataset
-# ------------------------------
 
 print("Current Working Directory:")
 print(os.getcwd())
@@ -17,18 +15,13 @@ df = pd.read_csv("sales_data.csv")
 print("\n✅ First 5 Rows:")
 print(df.head())
 
-# ------------------------------
 # Step 2: Basic Information
-# ------------------------------
 print("\n📌 Dataset Info:")
 print(df.info())
 
 print("\n📊 Statistical Summary:")
 print(df.describe())
-
-# ------------------------------
 # Step 3: Data Cleaning
-# ------------------------------
 
 # Missing Values
 print("\n❌ Missing Values:")
@@ -63,9 +56,8 @@ print("\n✅ Outliers handled.")
 if 'Date' in df.columns:
     df['Date'] = pd.to_datetime(df['Date'])
 
-# ------------------------------
+
 # Step 4: Data Visualization
-# ------------------------------
 
 sns.set(style="whitegrid")
 
@@ -97,16 +89,11 @@ sns.heatmap(df.corr(numeric_only=True), annot=True)
 plt.title("Correlation Matrix")
 plt.show()
 
-# ------------------------------
 # Step 5: Save Cleaned Data
-# ------------------------------
 df.to_csv("cleaned_sales_data.csv", index=False)
 
-print("\n💾 Cleaned data saved as cleaned_sales_data.csv")
-
-# ------------------------------
+print("\n Cleaned data saved as cleaned_sales_data.csv")
 # Step 6: Insights
-# ------------------------------
 print("\n📌 Sample Insights:")
 print("- Data cleaned successfully")
 print("- Outliers removed for better accuracy")
